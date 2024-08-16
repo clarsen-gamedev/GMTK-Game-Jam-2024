@@ -3,7 +3,7 @@
 // Date: 08/16/2024
 // Description: 
 
-using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FPSController : MonoBehaviour
@@ -14,6 +14,10 @@ public class FPSController : MonoBehaviour
     public float runningSpeed = 10f;
     public float jumpSpeed = 6f;
     public float gravity = 20f;
+    
+    [HideInInspector] public enum PlayerScale { NORMAL, SMALL, NONE };
+    [Header("Player Scale Variables")]
+    public PlayerScale playerScale = PlayerScale.NORMAL;
 
     [Header("Camera")]
     public Camera playerCamera;
@@ -101,6 +105,7 @@ public class FPSController : MonoBehaviour
         #endregion
     }
 
+    // Input 0 for left click and 1 for right click, like in the update function
     private void ChangeObjectScale(int input)
     {
         RaycastHit hit;
@@ -109,7 +114,26 @@ public class FPSController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Transform objectHit = hit.transform;
+            ScalableObjectController objectController = objectHit.GetComponent<ScalableObjectController>();
 
+            // Left click (shrink) is clicked
+            if (input == 0)
+            {
+                if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
+                    playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                {
+                    objectHit.GetComponent<ScalableObjectController>().ShrinkObject();
+                }
+            }
+            // Right click (grow) is clicked
+            else if (input == 1)
+            {
+                if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
+                    playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                {
+                    objectHit.GetComponent<ScalableObjectController>().GrowObject();
+                }
+            }
             Debug.Log("Object Hit: " + objectHit.gameObject);
         }
     }
