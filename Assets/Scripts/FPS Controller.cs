@@ -3,6 +3,7 @@
 // Date: 08/16/2024
 // Description: 
 
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class FPSController : MonoBehaviour
@@ -42,6 +43,7 @@ public class FPSController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region General Movement
         // When grounded, recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -81,6 +83,34 @@ public class FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+        #endregion
+
+        #region Interactions
+        // Left click = shrink
+        if (Input.GetMouseButtonDown(0))
+        {
+            ChangeObjectScale(0);
+        }
+
+        // Right click = grow
+        if (Input.GetMouseButtonDown(1))
+        {
+            ChangeObjectScale(1);
+        }
+        #endregion
+    }
+
+    private void ChangeObjectScale(int input)
+    {
+        RaycastHit hit;
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            Transform objectHit = hit.transform;
+
+            Debug.Log("Object Hit: " + objectHit.gameObject);
         }
     }
     #endregion
