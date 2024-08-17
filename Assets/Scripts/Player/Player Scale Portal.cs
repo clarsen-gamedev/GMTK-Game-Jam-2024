@@ -10,9 +10,10 @@ public class PlayerScalePortal : MonoBehaviour
     #region Collider Functions
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<FPSController>().playerScale == FPSController.PlayerScale.NORMAL)
         {
             // Change the player scale to small and teleport to last used scale platform
+            Debug.Log("Player has entered the portal");
         }
     }
     #endregion

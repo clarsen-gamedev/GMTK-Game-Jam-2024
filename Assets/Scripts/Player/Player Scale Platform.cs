@@ -10,7 +10,7 @@ public class PlayerScalePlatform : MonoBehaviour
     #region Collider Functions
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.GetComponent<FPSController>().playerScale == FPSController.PlayerScale.SMALL)
         {
             // Change player scale to normal and teleport to middle of the room
             Debug.Log("Player has entered the platform");
