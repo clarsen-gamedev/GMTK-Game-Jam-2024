@@ -14,6 +14,11 @@ public class FPSController : MonoBehaviour
     public float runningSpeed = 10f;
     public float jumpSpeed = 6f;
     public float gravity = 20f;
+
+    [Header("Object Pickup Variables")]
+    public float pickupDistance = 5f;
+    public Transform objectGrabPoint;
+    public LayerMask pickupLayerMask;
     
     [HideInInspector] public enum PlayerScale { NORMAL, SMALL, NONE };
     [Header("Player Scale Variables")]
@@ -31,6 +36,9 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
+
+    // Object pickup
+    private GrabbableObjectController grabbableObject;
     #endregion
 
     #region Functions
@@ -102,6 +110,9 @@ public class FPSController : MonoBehaviour
         {
             ChangeObjectScale(1);
         }
+
+        // Press E = Pickup/Drop
+        PickupObject();
         #endregion
     }
 
@@ -134,8 +145,33 @@ public class FPSController : MonoBehaviour
                     objectHit.GetComponent<ScalableObjectController>().GrowObject();
                 }
             }
-            Debug.Log("Object Hit: " + objectHit.gameObject);
         }
+    }
+
+    private void PickupObject()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (grabbableObject == null)
+            {
+                // Pickup the object
+                if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit raycastHit, pickupDistance, pickupLayerMask))
+                {
+                    if (raycastHit.transform.TryGetComponent(out grabbableObject))
+                    {
+                        grabbableObject.GrabObject(objectGrabPoint);
+                    }
+                }
+            }
+            else
+            {
+                // Drop the object
+                grabbableObject.DropObject();
+                grabbableObject = null;
+            }
+            
+        }
+        
     }
     #endregion
 }
