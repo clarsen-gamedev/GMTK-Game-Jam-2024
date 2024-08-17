@@ -13,8 +13,6 @@ public class ScalableObjectController : MonoBehaviour
     public ScaleType scaleType;
     public float maxScaleSize;
     public float minScaleSize;
-
-    //[HideInInspector] public int currentScaleRange = 0;
     #endregion
 
     #region Functions
