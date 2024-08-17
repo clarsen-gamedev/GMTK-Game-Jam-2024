@@ -113,6 +113,13 @@ public class FPSController : MonoBehaviour
 
         // Press E = Pickup/Drop
         PickupObject();
+
+        // Move grabbed object towards and away from camera
+        if (grabbableObject != null)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            objectGrabPoint.transform.Translate(0, 0, scroll * 3f, Space.Self);
+        }
         #endregion
     }
 
@@ -169,9 +176,7 @@ public class FPSController : MonoBehaviour
                 grabbableObject.DropObject();
                 grabbableObject = null;
             }
-            
         }
-        
     }
     #endregion
 }
