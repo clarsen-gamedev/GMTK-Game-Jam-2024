@@ -3,7 +3,6 @@
 // Date: 08/16/2024
 // Description: 
 
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FPSController : MonoBehaviour

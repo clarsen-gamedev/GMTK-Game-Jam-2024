@@ -3,12 +3,13 @@
 // Date: 08/16/2024
 // Description: 
 
-using System.Collections;
 using UnityEngine;
 
 public class GrabbableObjectController : MonoBehaviour
 {
     #region Private Variables
+    private FPSController player;
+
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
     private float lerpSpeed = 10f;
@@ -18,6 +19,9 @@ public class GrabbableObjectController : MonoBehaviour
     #region Functions
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>();
+        player.canMove = true;
+
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -30,6 +34,19 @@ public class GrabbableObjectController : MonoBehaviour
 
             // Object rotation
             RotateObject();
+        }
+    }
+
+    private void Update()
+    {
+        // Lock and unlock the player movement when rotating
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.T))
+        {
+            player.canMove = false;
+        }
+        if (Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.T))
+        {
+            player.canMove = true;
         }
     }
 
