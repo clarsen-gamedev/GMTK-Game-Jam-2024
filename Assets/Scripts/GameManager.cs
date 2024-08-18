@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         smallPlayer.SetActive(true);
 
         // Enable the Game UI
+        currentScreen = UIScreen.GAME;
         UISwitch(UIScreen.GAME);
 
         // Set collectiblesFound to 0
@@ -84,7 +85,24 @@ public class GameManager : MonoBehaviour
 
     private void ResumeGame()
     {
+        // Play pause game audio
+        //GetComponent<AudioSource>().clip = pauseSound;
+        //GetComponent<AudioSource>().Play();
 
+        // Unlock player movement
+        normalPlayer.GetComponent<FPSController>().canMove = true;
+        smallPlayer.GetComponent<FPSController>().canMove = true;
+
+        // Switch to the game screen
+        UISwitch(UIScreen.GAME);
+
+        // Lock the cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        // Resume game time
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     private void PauseGame()
@@ -93,8 +111,16 @@ public class GameManager : MonoBehaviour
         //GetComponent<AudioSource>().clip = pauseSound;
         //GetComponent<AudioSource>().Play();
 
+        // Lock player movement
+        normalPlayer.GetComponent<FPSController>().canMove = false;
+        smallPlayer.GetComponent<FPSController>().canMove = false;
+
         // Switch to the pause screen
         UISwitch(UIScreen.PAUSE);
+
+        // Unlock the cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         // Pause game time
         Time.timeScale = 0f;
