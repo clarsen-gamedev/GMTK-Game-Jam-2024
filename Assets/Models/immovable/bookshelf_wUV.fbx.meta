@@ -3,7 +3,17 @@ guid: 5ce125418eb7ac1479292f9f0d166622
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bookCase exterior
+    second: {fileID: 2100000, guid: 1828c299ba8a26242a10305b7db96483, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shelves
+    second: {fileID: 2100000, guid: 1df0d4082b30b554db88cc2d97c318d2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

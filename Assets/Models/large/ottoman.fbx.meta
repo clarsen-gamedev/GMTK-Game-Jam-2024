@@ -3,7 +3,12 @@ guid: 01e071816af9c034d9e2de1f1224d366
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: footrestOttoman
+    second: {fileID: 2100000, guid: f0ba33641abe19e44905d7224bc56539, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

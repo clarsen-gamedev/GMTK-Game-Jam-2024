@@ -3,7 +3,12 @@ guid: 3d7816117ab794a4f85fb5bb3abf59f7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: outer scroll
+    second: {fileID: 2100000, guid: 9fe5f60beee7bb64ebda315a742c6051, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
