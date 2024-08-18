@@ -31,5 +31,24 @@ public class GameManager : MonoBehaviour
         // Set collectiblesFound to 0
         collectiblesFound = 0;
     }
+
+    private void Update()
+    {
+        // Press Tab = Grow/Shrink Player
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (smallPlayer.activeSelf == false)
+            {
+                normalPlayer.SetActive(false);
+                smallPlayer.SetActive(true);
+            }
+
+            else if (normalPlayer.activeSelf == false)
+            {
+                normalPlayer.SetActive(true);
+                smallPlayer.SetActive(false);
+            }
+        }
+    }
     #endregion
 }
