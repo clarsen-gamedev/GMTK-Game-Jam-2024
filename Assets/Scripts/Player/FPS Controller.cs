@@ -165,7 +165,11 @@ public class FPSController : MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent(out grabbableObject))
                     {
-                        grabbableObject.GrabObject(objectGrabPoint);
+                        if (playerScale == PlayerScale.NORMAL && grabbableObject.GetComponent<ScalableObjectController>().scaleType == ScalableObjectController.ScaleType.RED ||
+                            playerScale == PlayerScale.SMALL && grabbableObject.GetComponent<ScalableObjectController>().scaleType == ScalableObjectController.ScaleType.GREEN)
+                        {
+                            grabbableObject.GrabObject(objectGrabPoint);
+                        }
                     }
                 }
             }
