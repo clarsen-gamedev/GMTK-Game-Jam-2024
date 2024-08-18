@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         // Play pause game audio
         //GetComponent<AudioSource>().clip = pauseSound;
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         isPaused = false;
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         // Play pause game audio
         //GetComponent<AudioSource>().clip = pauseSound;
@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
         // Pause game time
         Time.timeScale = 0f;
         isPaused = true;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void UISwitch(UIScreen screen)
