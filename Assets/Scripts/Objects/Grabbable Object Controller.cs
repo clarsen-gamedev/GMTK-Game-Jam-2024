@@ -9,6 +9,7 @@ public class GrabbableObjectController : MonoBehaviour
 {
     #region Private Variables
     private FPSController player;
+    private ScalableObjectController scaleController;
 
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
@@ -22,6 +23,7 @@ public class GrabbableObjectController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>();
         player.canMove = true;
 
+        scaleController = GetComponent<ScalableObjectController>();
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
