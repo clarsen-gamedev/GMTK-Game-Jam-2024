@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 525895849231416400}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7361540021994187395
 BoxCollider:
@@ -81,9 +81,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &4420637671325973328
 MonoBehaviour:
   m_ObjectHideFlags: 0
