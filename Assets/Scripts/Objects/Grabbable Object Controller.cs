@@ -63,13 +63,13 @@ public class GrabbableObjectController : MonoBehaviour
         // Rotate the object 90 degrees along the Y axis (left/right)
         if (Input.GetKey(KeyCode.R))
         {
-            objectRigidbody.transform.Rotate(0, rotateAngle * Time.deltaTime, 0);
+            objectRigidbody.transform.Rotate(0, rotateAngle * Time.deltaTime, 0, Space.Self);
         }
         
         // Rotate the object 90 degrees along the X axis (up/down)
         if (Input.GetKey(KeyCode.T))
         {
-            objectRigidbody.transform.Rotate(rotateAngle * Time.deltaTime, 0, 0);
+            objectRigidbody.transform.Rotate(rotateAngle * Time.deltaTime, 0, 0, Space.Self);
         }
     }
 
