@@ -15,7 +15,7 @@ public class KillFloor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if an object has hit the Kill Floor
-        if (other.gameObject.layer == LayerMask.NameToLayer("Objects"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Objects") || other.tag == "Player")
         {
             other.transform.position = teleportLocation.position;   // Move the object to the teleport position
         }
