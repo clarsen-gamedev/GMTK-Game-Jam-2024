@@ -52,6 +52,9 @@ MonoBehaviour:
   UI_CollectibleCounter: {fileID: 0}
   crosshair: {fileID: 0}
   pickupSound: {fileID: 8300000, guid: 72f3fc8e694877d47894c2ffacafe901, type: 3}
+  scalingDownSound: {fileID: 8300000, guid: 341efe167573e124ab27d85971ee2dce, type: 3}
+  scalingUpSound: {fileID: 8300000, guid: 2b0707bf5408e904b85924e342684d2a, type: 3}
+  scalingLimitMax: {fileID: 8300000, guid: 29e053e0f6fe0bb48b56d032924bb418, type: 3}
   collectiblesFound: 0
   currentScreen: 2
   isPaused: 0
