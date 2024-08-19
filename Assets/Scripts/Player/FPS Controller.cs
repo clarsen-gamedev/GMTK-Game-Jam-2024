@@ -25,6 +25,10 @@ public class FPSController : MonoBehaviour
     [Header("Player Scale Variables")]
     public PlayerScale playerScale = PlayerScale.NORMAL;
 
+    [Header("UI Crosshairs")]
+    public Sprite crosshairNormal;
+    public Sprite crosshairScalable;
+
     [Header("Camera")]
     public Camera playerCamera;
     public float lookSpeed = 2f;
@@ -127,6 +131,10 @@ public class FPSController : MonoBehaviour
             }
         }
         #endregion
+
+        #region Update Crosshair
+        ChangeCrosshair();
+        #endregion
     }
 
     // Input 0 for left click and 1 for right click, like in the update function
@@ -190,6 +198,17 @@ public class FPSController : MonoBehaviour
                 objectGrabPoint.position = grabPointReset.position;
                 objectGrabPoint.rotation = grabPointReset.rotation;
             }
+        }
+    }
+
+    public void ChangeCrosshair()
+    {
+        RaycastHit hit;
+        Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            //if (hit.)
         }
     }
     #endregion

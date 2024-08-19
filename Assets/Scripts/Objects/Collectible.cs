@@ -28,6 +28,9 @@ public class Collectible : MonoBehaviour
             gameManager.collectiblesFound++;
             gameManager.UI_CollectibleCounter.text = "Scales: " + gameManager.collectiblesFound + "/" + gameManager.totalCollectibles;
 
+            gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.pickupSound);
+            gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.pickupSound);
+
             // Delete collectible
             Destroy(gameObject);
         }

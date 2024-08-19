@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Elements")]
     public TMP_Text UI_CollectibleCounter;
+    public GameObject crosshair;
+
+    [Header("Sounds")]
+    public AudioClip pickupSound;
     #endregion
 
     #region Hidden Variables
@@ -136,6 +140,12 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PlaySoundEffect(AudioSource source, AudioClip clip)
+    {
+        source.clip = clip;
+        source.Play();
     }
 
     private void UISwitch(UIScreen screen)
