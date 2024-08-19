@@ -145,6 +145,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 18932627}
     - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 1688449520}
+    - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
       propertyPath: smallPlayer
       value: 
       objectReference: {fileID: 1677685173}
@@ -383,6 +387,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4475338217673009033, guid: fcc225e74348538429ca8315ef2f4d2f, type: 3}
   m_PrefabInstance: {fileID: 1874930645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688449520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4252974692760313665, guid: 9ac70a688a212c0408363de88c053a8d, type: 3}
+  m_PrefabInstance: {fileID: 6282231306437342768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874930645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,10 +447,6 @@ PrefabInstance:
     - target: {fileID: 6861662620730686391, guid: fcc225e74348538429ca8315ef2f4d2f, type: 3}
       propertyPath: m_Name
       value: Small Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6861662620730686391, guid: fcc225e74348538429ca8315ef2f4d2f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -503,10 +508,6 @@ PrefabInstance:
     - target: {fileID: 5762302434366732030, guid: 391839b3e01b9c047badedfcb6c355b3, type: 3}
       propertyPath: m_Name
       value: Normal Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5762302434366732030, guid: 391839b3e01b9c047badedfcb6c355b3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
