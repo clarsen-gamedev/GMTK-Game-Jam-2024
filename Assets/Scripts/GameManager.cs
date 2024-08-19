@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     #region Functions
     private void Awake()
     {
+        ResumeGame();
+
         // Start game with small player active and normal player inactive
         normalPlayer.SetActive(false);
         smallPlayer.SetActive(true);
