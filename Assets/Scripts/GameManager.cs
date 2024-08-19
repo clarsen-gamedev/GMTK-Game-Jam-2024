@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Sounds")]
     public AudioClip pickupSound;
+    public AudioClip scalingDownSound;
+    public AudioClip scalingUpSound;
+    public AudioClip scalingLimitMax;
     #endregion
 
     #region Hidden Variables

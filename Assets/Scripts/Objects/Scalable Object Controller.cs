@@ -13,6 +13,7 @@ public class ScalableObjectController : MonoBehaviour
     public ScaleType scaleType;
     public float maxScaleSize;
     public float minScaleSize;
+    GameManager gameManager;
     #endregion
 
     #region Functions
@@ -36,6 +37,7 @@ public class ScalableObjectController : MonoBehaviour
         if (newScale.x <= maxScaleSize)
         {
             gameObject.transform.localScale = newScale;
+
         }
     }
 
