@@ -155,32 +155,20 @@ public class FPSController : MonoBehaviour
                 // Left click (shrink) is clicked
                 if (input == 0)
                 {
-<<<<<<< Updated upstream
                     if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
                         playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
                     {
                         objectHit.GetComponent<ScalableObjectController>().ShrinkObject();
                     }
-=======
-                    objectHit.GetComponent<ScalableObjectController>().ShrinkObject();
-                    gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
-                    gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
->>>>>>> Stashed changes
                 }
                 // Right click (grow) is clicked
                 else if (input == 1)
                 {
-<<<<<<< Updated upstream
                     if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
                         playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
                     {
                         objectHit.GetComponent<ScalableObjectController>().GrowObject();
                     }
-=======
-                    objectHit.GetComponent<ScalableObjectController>().GrowObject();
-                    gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
-                    gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
->>>>>>> Stashed changes
                 }
             }
         }
