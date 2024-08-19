@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 5989391894265313656}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6120115828126936683
 Rigidbody:
@@ -166,11 +166,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 86894ffae248e5b4a8a6467c62996d3e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b911555a7f87c141ae23ddc2b103fce, type: 2}
+      objectReference: {fileID: 2100000, guid: b9f1ab12c36072944a852c64419f9b92, type: 2}
     - target: {fileID: -7511558181221131132, guid: 86894ffae248e5b4a8a6467c62996d3e, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b911555a7f87c141ae23ddc2b103fce, type: 2}
+      objectReference: {fileID: 2100000, guid: ab1b8932d3d0fb0438facb72158d73dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 86894ffae248e5b4a8a6467c62996d3e, type: 3}
       propertyPath: m_Name
       value: Model
