@@ -21,11 +21,14 @@ public class GrabbableObjectController : MonoBehaviour
     private float rotateAngle = 180f;
     Vector3 rotationEulerAngles;
 
+    private GameManager gameManager;
     #endregion
 
     #region Functions
     private void Awake()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         player.canMove = true;
         smallPlayer.canMove = true;
 
@@ -81,6 +84,10 @@ public class GrabbableObjectController : MonoBehaviour
     {
         objectGrabPointTransform = objectGrabPoint;
         objectRigidbody.isKinematic = true;
+
+        // Play the grab sound effect
+        gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.interactSound);
+        gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.interactSound);
     }
 
     public void RotateObject()
