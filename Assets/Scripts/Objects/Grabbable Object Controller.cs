@@ -7,8 +7,12 @@ using UnityEngine;
 
 public class GrabbableObjectController : MonoBehaviour
 {
-    #region Private Variables
-    private FPSController player;
+    #region Inspector Variables
+    [SerializeField] FPSController player;
+    [SerializeField] FPSController smallPlayer;
+    #endregion
+
+    #region Hidden Variables
     private ScalableObjectController scaleController;
 
     private Rigidbody objectRigidbody;
@@ -20,8 +24,8 @@ public class GrabbableObjectController : MonoBehaviour
     #region Functions
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>();
         player.canMove = true;
+        smallPlayer.canMove = true;
 
         scaleController = GetComponent<ScalableObjectController>();
         objectRigidbody = GetComponent<Rigidbody>();
@@ -45,10 +49,12 @@ public class GrabbableObjectController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.T))
         {
             player.canMove = false;
+            smallPlayer.canMove = false;
         }
         if (Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.T))
         {
             player.canMove = true;
+            smallPlayer.canMove = true;
         }
     }
 

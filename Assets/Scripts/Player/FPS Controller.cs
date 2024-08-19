@@ -18,6 +18,7 @@ public class FPSController : MonoBehaviour
     [Header("Object Pickup Variables")]
     public float pickupDistance = 5f;
     public Transform objectGrabPoint;
+    public Transform grabPointReset;
     public LayerMask pickupLayerMask;
     
     [HideInInspector] public enum PlayerScale { NORMAL, SMALL, NONE };
@@ -184,6 +185,10 @@ public class FPSController : MonoBehaviour
                 // Drop the object
                 grabbableObject.DropObject();
                 grabbableObject = null;
+
+                // Reset the position of the grab point transform
+                objectGrabPoint.position = grabPointReset.position;
+                objectGrabPoint.rotation = grabPointReset.rotation;
             }
         }
     }
