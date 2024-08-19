@@ -673,6 +673,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8173138799311198180, guid: 9ac70a688a212c0408363de88c053a8d, type: 3}
   m_PrefabInstance: {fileID: 285443339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &285443343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4252974692760313665, guid: 9ac70a688a212c0408363de88c053a8d, type: 3}
+  m_PrefabInstance: {fileID: 285443339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &316357175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2580,6 +2585,10 @@ PrefabInstance:
       propertyPath: pauseUI
       value: 
       objectReference: {fileID: 285443341}
+    - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 285443343}
     - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
       propertyPath: smallPlayer
       value: 
