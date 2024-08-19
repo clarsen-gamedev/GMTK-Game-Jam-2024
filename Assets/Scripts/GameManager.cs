@@ -133,6 +133,9 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
+        // Resume the game
+        ResumeGame();
+
         Application.Quit();
     }
 
