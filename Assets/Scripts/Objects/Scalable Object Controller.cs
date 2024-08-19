@@ -26,6 +26,7 @@ public class ScalableObjectController : MonoBehaviour
             newScale.x = newScale.x * 2f;
             newScale.y = newScale.y * 2f;
             newScale.z = newScale.z * 2f;
+            
         }
         else
         {
