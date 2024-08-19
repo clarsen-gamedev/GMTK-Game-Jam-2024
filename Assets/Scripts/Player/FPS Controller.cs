@@ -112,12 +112,16 @@ public class FPSController : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 ChangeObjectScale(0);
+                gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
+                gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
             }
 
             // Right click = grow
             if (Input.GetMouseButtonDown(1))
             {
                 ChangeObjectScale(1);
+                gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
+                gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
             }
 
             // Press E = Pickup/Drop
