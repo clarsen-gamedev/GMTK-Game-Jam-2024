@@ -7,7 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: cap
+    second: {fileID: 2100000, guid: 23a81d3a8d3455a46b3dad8eab3403ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: glass
+    second: {fileID: 2100000, guid: 23a81d3a8d3455a46b3dad8eab3403ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: label
     second: {fileID: 2100000, guid: 23a81d3a8d3455a46b3dad8eab3403ae, type: 2}
   materials:
     materialImportMode: 2
