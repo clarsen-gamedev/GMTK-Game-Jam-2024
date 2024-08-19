@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public AudioClip scalingDownSound;
     public AudioClip scalingUpSound;
     public AudioClip scalingLimitMax;
+    public AudioClip interactSound;
     #endregion
 
     #region Hidden Variables
@@ -98,10 +99,6 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        // Play pause game audio
-        //GetComponent<AudioSource>().clip = pauseSound;
-        //GetComponent<AudioSource>().Play();
-
         // Unlock player movement
         normalPlayer.GetComponent<FPSController>().canMove = true;
         smallPlayer.GetComponent<FPSController>().canMove = true;
@@ -120,10 +117,6 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        // Play pause game audio
-        //GetComponent<AudioSource>().clip = pauseSound;
-        //GetComponent<AudioSource>().Play();
-
         // Lock player movement
         normalPlayer.GetComponent<FPSController>().canMove = false;
         smallPlayer.GetComponent<FPSController>().canMove = false;
