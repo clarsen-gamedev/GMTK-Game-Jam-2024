@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public GameObject normalPlayer;
     public GameObject smallPlayer;
 
+    [Header("Gameplay Variables")]
+    public int totalCollectibles;
+
     [Header("UI Panels")]
     public GameObject gameUI;
     public GameObject pauseUI;
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
 
         // Set collectiblesFound to 0
         collectiblesFound = 0;
+        UI_CollectibleCounter.text = "Scales: " + collectiblesFound + "/" + totalCollectibles;
     }
 
     private void Update()

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1749490723728975296
 MonoBehaviour:
@@ -46,8 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalPlayer: {fileID: 0}
   smallPlayer: {fileID: 0}
+  totalCollectibles: 10
   gameUI: {fileID: 0}
   pauseUI: {fileID: 0}
   UI_CollectibleCounter: {fileID: 0}
   collectiblesFound: 0
   currentScreen: 2
+  isPaused: 0

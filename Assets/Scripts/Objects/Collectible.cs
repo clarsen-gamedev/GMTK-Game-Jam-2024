@@ -26,7 +26,7 @@ public class Collectible : MonoBehaviour
         {
             // Increase collectiblesFound in the GameManager by 1
             gameManager.collectiblesFound++;
-            gameManager.UI_CollectibleCounter.text = "Doohinkus: " + gameManager.collectiblesFound;
+            gameManager.UI_CollectibleCounter.text = "Scales: " + gameManager.collectiblesFound + "/" + gameManager.totalCollectibles;
 
             // Delete collectible
             Destroy(gameObject);
