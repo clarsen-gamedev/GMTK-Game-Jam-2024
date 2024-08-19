@@ -22,6 +22,9 @@ public class TitleScreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Resume game time
+        Time.timeScale = 1f;
+
         GetComponent<AudioSource>().clip = menuSelect;  // Load the audio clip for clicking a menu option
 
         // Unlock cursor
