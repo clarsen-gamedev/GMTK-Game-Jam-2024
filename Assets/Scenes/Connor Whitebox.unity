@@ -1859,7 +1859,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c5153640203fa2f409e87cdf7c9fa6f5, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 43eb89cfd4bd86249a785e1b833464d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 39399ae30de98fd4e96a0b567b444dad, type: 2}
     - target: {fileID: 919132149155446097, guid: c5153640203fa2f409e87cdf7c9fa6f5, type: 3}
       propertyPath: m_Name
       value: bed_wUV
