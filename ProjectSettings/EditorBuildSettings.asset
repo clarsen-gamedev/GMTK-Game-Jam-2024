@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Connor Whitebox.unity
     guid: 3a7642c81ebcfdb48bca553564849532
+  - enabled: 1
+    path: Assets/Scenes/Win Scene.unity
+    guid: cfb9f070aad17dd499c41af0ca1b0ff8
   m_configObjects: {}
