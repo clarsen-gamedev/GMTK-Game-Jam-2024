@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4475338217673009033
 Transform:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ Transform:
   m_Children:
   - {fileID: 4463845762380172654}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8329443050586950756
 MonoBehaviour:
@@ -188,6 +188,10 @@ MonoBehaviour:
   playerCamera: {fileID: 1843707137065838931}
   lookSpeed: 2
   lookXLimit: 90
+  normalWalk: {fileID: 8300000, guid: 1e83c2854e5399b489bc871bcf4facd5, type: 3}
+  smallWalk: {fileID: 8300000, guid: ac3f00943fd4cff4c845791b6f41013d, type: 3}
+  normalRun: {fileID: 8300000, guid: 3cfa52b0aab60104da76c50dd876a646, type: 3}
+  smallRun: {fileID: 8300000, guid: 28488ac050430674aa124804da12a7bf, type: 3}
   canMove: 1
 --- !u!143 &3872128936575395572
 CharacterController:
@@ -225,11 +229,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ac3f00943fd4cff4c845791b6f41013d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
