@@ -212,7 +212,17 @@ public class FPSController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            //if (hit.)
+            Transform objectHit = hit.transform;
+
+            // Check if hit object has the grabbable script
+            if (objectHit.gameObject.GetComponent<GrabbableObjectController>() != null)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
     #endregion
