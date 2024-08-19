@@ -35,6 +35,12 @@ public class FPSController : MonoBehaviour
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
 
+    [Header("Movement Audio")]
+    public AudioClip normalWalk;
+    public AudioClip smallWalk;
+    public AudioClip normalRun;
+    public AudioClip smallRun;
+
     [HideInInspector] public bool canMove = true;
     #endregion
 
@@ -43,6 +49,7 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
+    private AudioSource audioSource;
 
     // Object pickup
     private GrabbableObjectController grabbableObject;
@@ -52,6 +59,8 @@ public class FPSController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         characterController = GetComponent<CharacterController>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
@@ -95,6 +104,34 @@ public class FPSController : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+
+        // Change the audio clip depending on action
+        if (isRunning && playerScale == PlayerScale.NORMAL && audioSource.clip != normalRun)
+        {
+            audioSource.clip = normalRun;
+        }
+        else if (isRunning && playerScale == PlayerScale.SMALL && audioSource.clip != smallRun)
+        {
+            audioSource.clip = smallRun;
+        }
+        else if (!isRunning && playerScale == PlayerScale.NORMAL && audioSource.clip != normalWalk)
+        {
+            audioSource.clip = normalWalk;
+        }
+        else if (!isRunning && playerScale == PlayerScale.SMALL && audioSource.clip != smallWalk)
+        {
+            audioSource.clip = smallWalk;
+        }
+
+        // Movement Audio
+        if (characterController.velocity != Vector3.zero && audioSource.isPlaying == false && characterController.isGrounded)
+        {
+            audioSource.Play();
+        }
+        else if (characterController.velocity == Vector3.zero && audioSource.isPlaying == true || !characterController.isGrounded)
+        {
+            audioSource.Stop();
+        }
 
         // Player and Camera rotation
         if (canMove)
