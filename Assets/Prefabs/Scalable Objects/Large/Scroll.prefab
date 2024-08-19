@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1231034089029862675}
   - {fileID: 776805850855306358}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3948927964441974004
 Rigidbody:
@@ -360,15 +360,15 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3d7816117ab794a4f85fb5bb3abf59f7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e0f99eb1bba4914b8d2193df82da0dc, type: 2}
+      objectReference: {fileID: 2100000, guid: 9fe5f60beee7bb64ebda315a742c6051, type: 2}
     - target: {fileID: -7511558181221131132, guid: 3d7816117ab794a4f85fb5bb3abf59f7, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e0f99eb1bba4914b8d2193df82da0dc, type: 2}
+      objectReference: {fileID: 2100000, guid: 51f1e1752a4a6d744a8632c5d277509f, type: 2}
     - target: {fileID: -7511558181221131132, guid: 3d7816117ab794a4f85fb5bb3abf59f7, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e0f99eb1bba4914b8d2193df82da0dc, type: 2}
+      objectReference: {fileID: 2100000, guid: b8a5642e407c1dd4082bc46efc95deef, type: 2}
     - target: {fileID: 919132149155446097, guid: 3d7816117ab794a4f85fb5bb3abf59f7, type: 3}
       propertyPath: m_Name
       value: Model

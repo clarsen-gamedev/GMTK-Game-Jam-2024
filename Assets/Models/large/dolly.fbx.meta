@@ -3,7 +3,22 @@ guid: df617a2e015685e4c836f2b0aa103590
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exteriorPlastic
+    second: {fileID: 2100000, guid: 64043eb90c53b7b429b69f2232231556, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exteriorSeeThroughPlastic
+    second: {fileID: 2100000, guid: d8d11244f5d90b049a952cf9034f9661, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheels
+    second: {fileID: 2100000, guid: ab1b8932d3d0fb0438facb72158d73dc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
