@@ -1585,6 +1585,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: aac417b5fd676b149af5a46a63a02bbe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b4762b5e3452e448a20d9ecb5227eb9, type: 2}
+    - target: {fileID: -7511558181221131132, guid: aac417b5fd676b149af5a46a63a02bbe, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b6bcdedd2d5ca649ac03c9e0f129f12, type: 2}
     - target: {fileID: 919132149155446097, guid: aac417b5fd676b149af5a46a63a02bbe, type: 3}
       propertyPath: m_Name
       value: bookshelfSMALL_wUV
@@ -2481,7 +2489,7 @@ PrefabInstance:
     - target: {fileID: 7570261837578586773, guid: fea6641a4e831824cad206d551ea2735, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: ce4ed8cb1ed266f42a537f2184512df3, type: 2}
+      objectReference: {fileID: 2100000, guid: f76bd0a972d73274c903af721c31eb68, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3250,6 +3258,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.368
       objectReference: {fileID: 0}
+    - target: {fileID: 1656452457796365653, guid: 7b3c0a8291ccd17448437eb08600f614, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1828c299ba8a26242a10305b7db96483, type: 2}
+    - target: {fileID: 3389147694848447491, guid: 7b3c0a8291ccd17448437eb08600f614, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b4762b5e3452e448a20d9ecb5227eb9, type: 2}
     - target: {fileID: 4487175640771083233, guid: 7b3c0a8291ccd17448437eb08600f614, type: 3}
       propertyPath: m_Name
       value: roomLARGER
@@ -3310,6 +3326,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.29
       objectReference: {fileID: 0}
+    - target: {fileID: 8262882543763361369, guid: 7b3c0a8291ccd17448437eb08600f614, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b20ca08dc8ac0da4db0f692c7328a577, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 9173458103031084704, guid: 7b3c0a8291ccd17448437eb08600f614, type: 3}
