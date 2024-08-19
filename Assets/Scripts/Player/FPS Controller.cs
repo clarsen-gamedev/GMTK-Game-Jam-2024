@@ -151,24 +151,28 @@ public class FPSController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Transform objectHit = hit.transform;
-            ScalableObjectController objectController = objectHit.GetComponent<ScalableObjectController>();
 
-            // Left click (shrink) is clicked
-            if (input == 0)
+            if (objectHit.gameObject.GetComponent<ScalableObjectController>() != null)
             {
-                if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
-                    playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                ScalableObjectController objectController = objectHit.GetComponent<ScalableObjectController>();
+
+                // Left click (shrink) is clicked
+                if (input == 0)
                 {
-                    objectHit.GetComponent<ScalableObjectController>().ShrinkObject();
+                    if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
+                        playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                    {
+                        objectHit.GetComponent<ScalableObjectController>().ShrinkObject();
+                    }
                 }
-            }
-            // Right click (grow) is clicked
-            else if (input == 1)
-            {
-                if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
-                    playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                // Right click (grow) is clicked
+                else if (input == 1)
                 {
-                    objectHit.GetComponent<ScalableObjectController>().GrowObject();
+                    if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
+                        playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                    {
+                        objectHit.GetComponent<ScalableObjectController>().GrowObject();
+                    }
                 }
             }
         }
@@ -224,6 +228,10 @@ public class FPSController : MonoBehaviour
                     playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
                 {
                     gameManager.crosshair.GetComponent<Image>().sprite = crosshairScalable;
+                }
+                else
+                {
+                    gameManager.crosshair.GetComponent<Image>().sprite = crosshairNormal;
                 }
             }
             else
