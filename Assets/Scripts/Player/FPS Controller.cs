@@ -3,6 +3,7 @@
 // Date: 08/16/2024
 // Description: 
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FPSController : MonoBehaviour
@@ -32,6 +33,7 @@ public class FPSController : MonoBehaviour
     #endregion
 
     #region Private Variables
+    private GameManager gameManager;
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -45,6 +47,7 @@ public class FPSController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         // Lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -98,26 +101,29 @@ public class FPSController : MonoBehaviour
         #endregion
 
         #region Interactions
-        // Left click = shrink
-        if (Input.GetMouseButtonDown(0))
+        if (gameManager.isPaused == false)
         {
-            ChangeObjectScale(0);
-        }
+            // Left click = shrink
+            if (Input.GetMouseButtonDown(0))
+            {
+                ChangeObjectScale(0);
+            }
 
-        // Right click = grow
-        if (Input.GetMouseButtonDown(1))
-        {
-            ChangeObjectScale(1);
-        }
+            // Right click = grow
+            if (Input.GetMouseButtonDown(1))
+            {
+                ChangeObjectScale(1);
+            }
 
-        // Press E = Pickup/Drop
-        PickupObject();
+            // Press E = Pickup/Drop
+            PickupObject();
 
-        // Move grabbed object towards and away from camera
-        if (grabbableObject != null)
-        {
-            float scroll = Input.GetAxis("Mouse ScrollWheel");
-            objectGrabPoint.transform.Translate(0, 0, scroll * 3f, Space.Self);
+            // Move grabbed object towards and away from camera
+            if (grabbableObject != null)
+            {
+                float scroll = Input.GetAxis("Mouse ScrollWheel");
+                objectGrabPoint.transform.Translate(0, 0, scroll * 3f, Space.Self);
+            }
         }
         #endregion
     }

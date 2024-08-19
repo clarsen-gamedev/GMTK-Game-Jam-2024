@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public enum UIScreen { GAME, PAUSE, NONE };
     [HideInInspector] public UIScreen currentScreen = UIScreen.NONE;
 
-    private bool isPaused = false;
+    [HideInInspector] public bool isPaused = false;
     #endregion
 
     #region Functions
