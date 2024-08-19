@@ -1,5 +1,5 @@
 // Name: Grabbable Object Controller.cs
-// Author: Connor Larsen
+// Author: Connor Larsen - + a teeny bit JM <3
 // Date: 08/16/2024
 // Description: 
 
@@ -18,7 +18,9 @@ public class GrabbableObjectController : MonoBehaviour
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
     private float lerpSpeed = 10f;
-    private float rotateAngle = 90f;
+    private float rotateAngle = 180f;
+    Vector3 rotationEulerAngles;
+
     #endregion
 
     #region Functions
@@ -29,6 +31,7 @@ public class GrabbableObjectController : MonoBehaviour
 
         scaleController = GetComponent<ScalableObjectController>();
         objectRigidbody = GetComponent<Rigidbody>();
+        rotationEulerAngles = player.transform.eulerAngles;
     }
 
     private void FixedUpdate()
@@ -46,12 +49,28 @@ public class GrabbableObjectController : MonoBehaviour
     private void Update()
     {
         // Lock and unlock the player movement when rotating
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.T))
+        //if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.T) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.G) || Input.GetKeyDown(KeyCode.T) || Input.GetKeyDown(KeyCode.F))
         {
-            player.canMove = false;
-            smallPlayer.canMove = false;
+            if (objectRigidbody.isKinematic)
+            {
+                player.canMove = false;
+                smallPlayer.canMove = false;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.R) || Input.GetKeyUp(KeyCode.T))
+        //if (Input.GetKeyUp(KeyCode.H) || Input.GetKeyUp(KeyCode.G) || Input.GetKeyUp(KeyCode.T) || Input.GetKeyUp(KeyCode.F) || Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.H) || Input.GetKeyUp(KeyCode.G) || Input.GetKeyUp(KeyCode.T) || Input.GetKeyUp(KeyCode.F))
+        {
+            if (objectRigidbody.isKinematic)
+            {
+                player.canMove = true;
+                smallPlayer.canMove = true;
+            }
+        }
+
+
+        //reset rotation to pickup position, testing
+        if(Input.GetKeyUp(KeyCode.Y))
         {
             player.canMove = true;
             smallPlayer.canMove = true;
@@ -66,16 +85,41 @@ public class GrabbableObjectController : MonoBehaviour
 
     public void RotateObject()
     {
-        // Rotate the object 90 degrees along the Y axis (left/right)
-        if (Input.GetKey(KeyCode.R))
+
+        // Rotate the object 90 degrees along the Y axis (right)
+        /*if(Input.GetKey(KeyCode.R))
+        {
+            objectRigidbody.transform.Rotate(0, Input.GetAxis("Mouse X") * rotateAngle * Time.deltaTime, Input.GetAxis("Mouse Y") * rotateAngle * Time.deltaTime, Space.Self);
+        }*/
+
+        if (Input.GetKey(KeyCode.H))
+        {
+
+            objectRigidbody.transform.Rotate(0, -rotateAngle * Time.deltaTime, 0, Space.Self);
+        }
+        
+        // Rotate the object 90 degrees along the X axis (up)
+        if (Input.GetKey(KeyCode.G))
+        {
+
+            objectRigidbody.transform.Rotate(0, 0, -rotateAngle * Time.deltaTime, Space.Self);
+        }
+
+        if (Input.GetKey(KeyCode.F))
         {
             objectRigidbody.transform.Rotate(0, rotateAngle * Time.deltaTime, 0, Space.Self);
         }
-        
-        // Rotate the object 90 degrees along the X axis (up/down)
+
         if (Input.GetKey(KeyCode.T))
         {
-            objectRigidbody.transform.Rotate(rotateAngle * Time.deltaTime, 0, 0, Space.Self);
+            objectRigidbody.transform.Rotate(0, 0, rotateAngle * Time.deltaTime, Space.Self);
+        }
+
+        if(Input.GetKey(KeyCode.Y))
+        {
+            objectRigidbody.transform.localEulerAngles = new Vector3(0.0f, objectRigidbody.transform.localEulerAngles.y, 0.0f);
+            objectRigidbody.transform.localEulerAngles = new Vector3(objectRigidbody.transform.localEulerAngles.x, 0.0f, 0.0f);
+            objectRigidbody.transform.localEulerAngles = new Vector3(0.0f, 0.0f, objectRigidbody.transform.localEulerAngles.z);
         }
     }
 
