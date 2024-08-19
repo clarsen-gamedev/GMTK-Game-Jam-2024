@@ -5,6 +5,7 @@
 
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPSController : MonoBehaviour
 {
@@ -215,13 +216,19 @@ public class FPSController : MonoBehaviour
             Transform objectHit = hit.transform;
 
             // Check if hit object has the grabbable script
-            if (objectHit.gameObject.GetComponent<GrabbableObjectController>() != null)
+            if (objectHit.gameObject.GetComponent<ScalableObjectController>() != null)
             {
+                ScalableObjectController objectController = objectHit.gameObject.GetComponent<ScalableObjectController>();
 
+                if (playerScale == PlayerScale.NORMAL && objectController.scaleType == ScalableObjectController.ScaleType.RED ||
+                    playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
+                {
+                    gameManager.crosshair.GetComponent<Image>().sprite = crosshairScalable;
+                }
             }
             else
             {
-
+                gameManager.crosshair.GetComponent<Image>().sprite = crosshairNormal;
             }
         }
     }
