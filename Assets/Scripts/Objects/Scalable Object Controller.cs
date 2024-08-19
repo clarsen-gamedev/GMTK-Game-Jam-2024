@@ -7,16 +7,24 @@ using UnityEngine;
 
 public class ScalableObjectController : MonoBehaviour
 {
-    #region Public and Serialized Variables
+    #region Inspector Variables
     public enum ScaleType { GREEN, RED, NONE };
     [Header("Scale Variables")]
     public ScaleType scaleType;
     public float maxScaleSize;
     public float minScaleSize;
-    GameManager gameManager;
+    #endregion
+
+    #region Hidden Variables
+    private GameManager gameManager;
     #endregion
 
     #region Functions
+    private void Awake()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
     public void GrowObject()
     {
         // Scale the object up
@@ -38,6 +46,15 @@ public class ScalableObjectController : MonoBehaviour
         {
             gameObject.transform.localScale = newScale;
 
+            // Play scaling up sound
+            gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
+            gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingUpSound);
+        }
+        else
+        {
+            // Play max scale sound
+            gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
+            gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
         }
     }
 
@@ -61,6 +78,16 @@ public class ScalableObjectController : MonoBehaviour
         if (newScale.x >= minScaleSize)
         {
             gameObject.transform.localScale = newScale;
+
+            // Play scaling down sound
+            gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
+            gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingDownSound);
+        }
+        else
+        {
+            // Play max scale sound
+            gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
+            gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
         }
     }
     #endregion
