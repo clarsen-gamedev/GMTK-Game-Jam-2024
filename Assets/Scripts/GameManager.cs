@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
         // Set collectiblesFound to 0
         collectiblesFound = 0;
-        UI_CollectibleCounter.text = "Scales: " + collectiblesFound + "/" + totalCollectibles;
+        UI_CollectibleCounter.text = collectiblesFound + "/" + totalCollectibles;
     }
 
     private void Update()
