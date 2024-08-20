@@ -48,7 +48,7 @@ MonoBehaviour:
   smallPlayer: {fileID: 0}
   roomDoor: {fileID: 0}
   exitPortal: {fileID: 0}
-  totalCollectibles: 1
+  totalCollectibles: 10
   gameUI: {fileID: 0}
   pauseUI: {fileID: 0}
   UI_CollectibleCounter: {fileID: 0}
