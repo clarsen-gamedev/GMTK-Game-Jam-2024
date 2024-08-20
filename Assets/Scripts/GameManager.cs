@@ -6,6 +6,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     [Header("UI Elements")]
     public TMP_Text UI_CollectibleCounter;
     public GameObject crosshair;
+    public GameObject sizeIndicator;
+
+    [Header("UI Sprites")]
+    public Sprite smallSizeIndicator;
+    public Sprite normalSizeIndicator;
 
     [Header("Sounds")]
     public AudioClip pickupSound;
@@ -70,12 +76,18 @@ public class GameManager : MonoBehaviour
             {
                 normalPlayer.SetActive(false);
                 smallPlayer.SetActive(true);
+
+                sizeIndicator.GetComponent<Image>().sprite = smallSizeIndicator;
+                sizeIndicator.GetComponent<Image>().color = Color.green;
             }
 
             else if (normalPlayer.activeSelf == false)
             {
                 normalPlayer.SetActive(true);
                 smallPlayer.SetActive(false);
+
+                sizeIndicator.GetComponent<Image>().sprite = normalSizeIndicator;
+                sizeIndicator.GetComponent<Image>().color = Color.red;
             }
         }
 
