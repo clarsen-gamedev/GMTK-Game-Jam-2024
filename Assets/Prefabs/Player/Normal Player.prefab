@@ -95,7 +95,7 @@ Transform:
   m_Children:
   - {fileID: 7441158809821125341}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &415460417082586044
 MonoBehaviour:
@@ -125,10 +125,12 @@ MonoBehaviour:
   playerCamera: {fileID: 5035587496276277695}
   lookSpeed: 2
   lookXLimit: 90
+  audioSource: {fileID: 2039912094279579313}
   normalWalk: {fileID: 8300000, guid: 1e83c2854e5399b489bc871bcf4facd5, type: 3}
   smallWalk: {fileID: 8300000, guid: ac3f00943fd4cff4c845791b6f41013d, type: 3}
   normalRun: {fileID: 8300000, guid: 3cfa52b0aab60104da76c50dd876a646, type: 3}
   smallRun: {fileID: 8300000, guid: 28488ac050430674aa124804da12a7bf, type: 3}
+  jumpSound: {fileID: 8300000, guid: 72f3fc8e694877d47894c2ffacafe901, type: 3}
   canMove: 1
 --- !u!143 &668560157227186718
 CharacterController:
@@ -166,11 +168,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ac3f00943fd4cff4c845791b6f41013d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

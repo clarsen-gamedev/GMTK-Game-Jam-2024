@@ -36,10 +36,12 @@ public class FPSController : MonoBehaviour
     public float lookXLimit = 45f;
 
     [Header("Movement Audio")]
+    public AudioSource audioSource;
     public AudioClip normalWalk;
     public AudioClip smallWalk;
     public AudioClip normalRun;
     public AudioClip smallRun;
+    public AudioClip jumpSound;
 
     [HideInInspector] public bool canMove = true;
     #endregion
@@ -49,7 +51,6 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
-    private AudioSource audioSource;
 
     // Object pickup
     private GrabbableObjectController grabbableObject;
@@ -59,8 +60,6 @@ public class FPSController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         characterController = GetComponent<CharacterController>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
@@ -90,6 +89,8 @@ public class FPSController : MonoBehaviour
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
+            audioSource.clip = jumpSound;
+            audioSource.Play();
         }
         else
         {
@@ -128,7 +129,7 @@ public class FPSController : MonoBehaviour
         {
             audioSource.Play();
         }
-        else if (characterController.velocity == Vector3.zero && audioSource.isPlaying == true || !characterController.isGrounded)
+        else if (characterController.velocity == Vector3.zero && audioSource.isPlaying == true || !characterController.isGrounded && audioSource.clip != jumpSound)
         {
             audioSource.Stop();
         }
