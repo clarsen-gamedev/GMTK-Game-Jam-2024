@@ -160,11 +160,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void CheckWinCondition()
+    public void CheckWinCondition(GameObject collectible)
     {
         if (collectiblesFound == totalCollectibles)
         {
             excapeText.SetActive(true);
+            Destroy(collectible);
 
             roomDoor.GetComponent<Animator>().SetTrigger("DoorOpen");
             exitPortal.GetComponent<BoxCollider>().enabled = true;
