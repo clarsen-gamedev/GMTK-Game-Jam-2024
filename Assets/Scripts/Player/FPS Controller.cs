@@ -26,7 +26,7 @@ public class FPSController : MonoBehaviour
     [Header("Player Scale Variables")]
     public PlayerScale playerScale = PlayerScale.NORMAL;
 
-    [Header("UI Crosshairs")]
+    [Header("UI Images")]
     public Sprite crosshairNormal;
     public Sprite crosshairScalable;
 

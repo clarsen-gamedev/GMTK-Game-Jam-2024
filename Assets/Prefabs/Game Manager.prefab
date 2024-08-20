@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1749490723728975296
 MonoBehaviour:
@@ -53,6 +53,9 @@ MonoBehaviour:
   pauseUI: {fileID: 0}
   UI_CollectibleCounter: {fileID: 0}
   crosshair: {fileID: 0}
+  sizeIndicator: {fileID: 0}
+  smallSizeIndicator: {fileID: 21300000, guid: 4cc389c109a9f8840b6595f73ea9e01a, type: 3}
+  normalSizeIndicator: {fileID: 21300000, guid: 4e12de40b729d0040a65a4c3eaf2e44a, type: 3}
   pickupSound: {fileID: 8300000, guid: 72f3fc8e694877d47894c2ffacafe901, type: 3}
   scalingDownSound: {fileID: 8300000, guid: 341efe167573e124ab27d85971ee2dce, type: 3}
   scalingUpSound: {fileID: 8300000, guid: 2b0707bf5408e904b85924e342684d2a, type: 3}
