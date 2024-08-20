@@ -264,15 +264,18 @@ public class FPSController : MonoBehaviour
                     playerScale == PlayerScale.SMALL && objectController.scaleType == ScalableObjectController.ScaleType.GREEN)
                 {
                     gameManager.crosshair.GetComponent<Image>().sprite = crosshairScalable;
+                    gameManager.contextIndicator.SetActive(true);
                 }
                 else
                 {
                     gameManager.crosshair.GetComponent<Image>().sprite = crosshairNormal;
+                    gameManager.contextIndicator.SetActive(false);
                 }
             }
             else
             {
                 gameManager.crosshair.GetComponent<Image>().sprite = crosshairNormal;
+                gameManager.contextIndicator.SetActive(false);
             }
         }
     }

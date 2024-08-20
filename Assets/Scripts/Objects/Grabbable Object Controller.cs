@@ -3,6 +3,7 @@
 // Date: 08/16/2024
 // Description: 
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,6 +88,8 @@ public class GrabbableObjectController : MonoBehaviour
         objectGrabPointTransform = objectGrabPoint;
         objectRigidbody.isKinematic = true;
 
+        gameManager.pickupText.text = "E - Drop";
+
         // Play the grab sound effect
         gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.interactSound);
         gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.interactSound);
@@ -136,6 +139,8 @@ public class GrabbableObjectController : MonoBehaviour
     {
         objectGrabPointTransform = null;
         objectRigidbody.isKinematic = false;
+
+        gameManager.pickupText.text = "E - Pickup";
     }
     #endregion
 }
