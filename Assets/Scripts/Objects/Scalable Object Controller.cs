@@ -3,6 +3,7 @@
 // Date: 08/16/2024
 // Description: 
 
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class ScalableObjectController : MonoBehaviour
@@ -13,6 +14,14 @@ public class ScalableObjectController : MonoBehaviour
     public ScaleType scaleType;
     public float maxScaleSize;
     public float minScaleSize;
+
+    [Header("Audio Source")]
+    public AudioSource audioSource;
+    public AudioClip hit1;
+    public AudioClip hit2;
+    public AudioClip hit3;
+    public AudioClip hit4;
+    public AudioClip hit5;
     #endregion
 
     #region Hidden Variables
@@ -89,6 +98,36 @@ public class ScalableObjectController : MonoBehaviour
             gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
             gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.scalingLimitMax);
         }
+    }
+    #endregion
+
+    #region Collision Functions
+    private void OnCollisionEnter()
+    {
+        int num = Random.Range(1, 5);
+
+        if (num == 1)
+        {
+            GetComponent<AudioSource>().clip = hit1;
+        }
+        else if (num == 2)
+        {
+            GetComponent<AudioSource>().clip = hit2;
+        }
+        else if (num == 3)
+        {
+            GetComponent<AudioSource>().clip = hit3;
+        }
+        else if (num == 4)
+        {
+            GetComponent<AudioSource>().clip = hit4;
+        }
+        else if (num == 5)
+        {
+            GetComponent<AudioSource>().clip = hit5;
+        }
+
+        GetComponent<AudioSource>().Play();
     }
     #endregion
 }
