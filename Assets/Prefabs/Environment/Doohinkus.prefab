@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3886577337285200598}
   - component: {fileID: 8612103456271736666}
   - component: {fileID: 2042462753848401914}
+  - component: {fileID: 5304807395056355428}
   m_Layer: 0
   m_Name: Doohinkus
   m_TagString: Untagged
@@ -67,6 +68,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edcbcbe613a7d64099a9e6d758f92ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5304807395056355428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589274479004836229}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33bb34883d22b1246b95c1f0a5efa828, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6152439897882871446
 PrefabInstance:
   m_ObjectHideFlags: 0

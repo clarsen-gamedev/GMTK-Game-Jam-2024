@@ -7,11 +7,6 @@ using UnityEngine;
 
 public class GrabbableObjectController : MonoBehaviour
 {
-    #region Inspector Variables
-    [SerializeField] FPSController player;
-    [SerializeField] FPSController smallPlayer;
-    #endregion
-
     #region Hidden Variables
     private ScalableObjectController scaleController;
 
@@ -22,12 +17,18 @@ public class GrabbableObjectController : MonoBehaviour
     Vector3 rotationEulerAngles;
 
     private GameManager gameManager;
+
+    private FPSController player;
+    private FPSController smallPlayer;
     #endregion
 
     #region Functions
     private void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
+        player = gameManager.normalPlayer.GetComponent<FPSController>();
+        smallPlayer = gameManager.smallPlayer.GetComponent<FPSController>();
 
         player.canMove = true;
         smallPlayer.canMove = true;
