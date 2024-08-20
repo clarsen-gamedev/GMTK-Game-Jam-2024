@@ -6564,6 +6564,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 113867293}
     - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
+      propertyPath: totalCollectibles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749490723728975296, guid: d2ac0174f1470fe4a88fecf2437a6fc8, type: 3}
       propertyPath: rotationIndicators
       value: 
       objectReference: {fileID: 1296801074}
