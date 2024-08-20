@@ -4,6 +4,7 @@
 // Description: 
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrabbableObjectController : MonoBehaviour
 {
@@ -123,7 +124,7 @@ public class GrabbableObjectController : MonoBehaviour
             objectRigidbody.transform.Rotate(0, 0, rotateAngle * Time.deltaTime, Space.Self);
         }
 
-        if(Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.Y))
         {
             objectRigidbody.transform.localEulerAngles = new Vector3(0.0f, objectRigidbody.transform.localEulerAngles.y, 0.0f);
             objectRigidbody.transform.localEulerAngles = new Vector3(objectRigidbody.transform.localEulerAngles.x, 0.0f, 0.0f);
