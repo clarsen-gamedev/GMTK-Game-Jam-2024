@@ -47,7 +47,10 @@ public class GameManager : MonoBehaviour
     public AudioClip scalingUpSound;
     public AudioClip scalingLimitMax;
     public AudioClip interactSound;
-    public AudioClip scalePlayer;
+    public AudioClip changeSizeSmall;
+    public AudioClip changeSizeBig;
+    public AudioClip victoryNoise;
+    public AudioClip doorOpen;
     #endregion
 
     #region Hidden Variables
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
 
                 sizeIndicator.GetComponent<Image>().sprite = smallSizeIndicator;
                 sizeIndicator.GetComponent<Image>().color = Color.green;
+                PlaySoundEffect(smallPlayer.GetComponent<AudioSource>(), changeSizeSmall);
             }
 
             else if (normalPlayer.activeSelf == false)
@@ -100,6 +104,7 @@ public class GameManager : MonoBehaviour
 
                 sizeIndicator.GetComponent<Image>().sprite = normalSizeIndicator;
                 sizeIndicator.GetComponent<Image>().color = Color.red;
+                PlaySoundEffect(normalPlayer.GetComponent<AudioSource>(), changeSizeBig);
             }
         }
 
@@ -173,6 +178,10 @@ public class GameManager : MonoBehaviour
 
             roomDoor.GetComponent<Animator>().SetTrigger("DoorOpen");
             exitPortal.GetComponent<BoxCollider>().enabled = true;
+            PlaySoundEffect(normalPlayer.GetComponent<AudioSource>(), victoryNoise);
+            PlaySoundEffect(smallPlayer.GetComponent<AudioSource>(), victoryNoise);
+            PlaySoundEffect(normalPlayer.GetComponent<AudioSource>(), doorOpen);
+            PlaySoundEffect(smallPlayer.GetComponent<AudioSource>(), doorOpen);
         }
     }
 

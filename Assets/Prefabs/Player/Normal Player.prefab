@@ -130,7 +130,7 @@ MonoBehaviour:
   smallWalk: {fileID: 8300000, guid: ac3f00943fd4cff4c845791b6f41013d, type: 3}
   normalRun: {fileID: 8300000, guid: 3cfa52b0aab60104da76c50dd876a646, type: 3}
   smallRun: {fileID: 8300000, guid: 28488ac050430674aa124804da12a7bf, type: 3}
-  jumpSound: {fileID: 8300000, guid: 72f3fc8e694877d47894c2ffacafe901, type: 3}
+  jumpSound: {fileID: 8300000, guid: 02bb5a7de6311344e8ed9e78140f5d8c, type: 3}
   canMove: 1
 --- !u!143 &668560157227186718
 CharacterController:
