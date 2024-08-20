@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text UI_CollectibleCounter;
     public GameObject rotationIndicators;
     public GameObject crosshair;
+    public GameObject contextIndicator;
+    public TMP_Text pickupText;
     public GameObject sizeIndicator;
     public GameObject upRotation;
     public GameObject downRotation;
