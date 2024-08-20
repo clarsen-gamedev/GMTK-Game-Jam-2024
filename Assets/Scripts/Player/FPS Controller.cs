@@ -227,6 +227,7 @@ public class FPSController : MonoBehaviour
                             playerScale == PlayerScale.SMALL && grabbableObject.GetComponent<ScalableObjectController>().scaleType == ScalableObjectController.ScaleType.GREEN)
                         {
                             grabbableObject.GrabObject(objectGrabPoint);
+                            gameManager.rotationIndicators.SetActive(true);
                         }
                     }
                 }
@@ -235,6 +236,7 @@ public class FPSController : MonoBehaviour
             {
                 // Drop the object
                 grabbableObject.DropObject();
+                gameManager.rotationIndicators.SetActive(false);
                 grabbableObject = null;
 
                 // Reset the position of the grab point transform
