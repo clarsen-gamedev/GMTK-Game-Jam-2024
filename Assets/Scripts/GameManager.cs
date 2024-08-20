@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [Header("Prefabs")]
     public GameObject normalPlayer;
     public GameObject smallPlayer;
+    public GameObject roomDoor;
+    public GameObject exitPortal;
 
     [Header("Gameplay Variables")]
     public int totalCollectibles;
@@ -136,6 +138,15 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CheckWinCondition()
+    {
+        if (collectiblesFound == totalCollectibles)
+        {
+            roomDoor.GetComponent<Animator>().SetTrigger("DoorOpen");
+            exitPortal.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     public void PlaySoundEffect(AudioSource source, AudioClip clip)
