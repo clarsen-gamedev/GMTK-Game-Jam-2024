@@ -31,7 +31,7 @@ public class Collectible : MonoBehaviour
             gameManager.PlaySoundEffect(gameManager.normalPlayer.GetComponent<AudioSource>(), gameManager.pickupSound);
             gameManager.PlaySoundEffect(gameManager.smallPlayer.GetComponent<AudioSource>(), gameManager.pickupSound);
 
-            gameManager.CheckWinCondition();
+            gameManager.CheckWinCondition(gameObject);
 
             // Delete collectible
             Destroy(gameObject);
