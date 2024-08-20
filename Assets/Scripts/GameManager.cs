@@ -31,10 +31,11 @@ public class GameManager : MonoBehaviour
     public GameObject contextIndicator;
     public TMP_Text pickupText;
     public GameObject sizeIndicator;
-    public GameObject upRotation;
-    public GameObject downRotation;
-    public GameObject leftRotation;
-    public GameObject rightRotation;
+    public GameObject excapeText;
+    //public GameObject upRotation;
+    //public GameObject downRotation;
+    //public GameObject leftRotation;
+    //public GameObject rightRotation;
 
     [Header("UI Sprites")]
     public Sprite smallSizeIndicator;
@@ -163,6 +164,8 @@ public class GameManager : MonoBehaviour
     {
         if (collectiblesFound == totalCollectibles)
         {
+            excapeText.SetActive(true);
+
             roomDoor.GetComponent<Animator>().SetTrigger("DoorOpen");
             exitPortal.GetComponent<BoxCollider>().enabled = true;
         }
