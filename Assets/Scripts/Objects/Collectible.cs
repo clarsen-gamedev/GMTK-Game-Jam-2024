@@ -34,7 +34,6 @@ public class Collectible : MonoBehaviour
             gameManager.CheckWinCondition();
 
             // Delete collectible
-            gameObject.GetComponent<Animator>().enabled = false;
             Destroy(gameObject);
         }
     }
