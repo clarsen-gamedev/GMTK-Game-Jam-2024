@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour
         // Press Tab = Grow/Shrink Player
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            normalPlayer.GetComponent<AudioSource>().clip = null;
+            smallPlayer.GetComponent<AudioSource>().clip = null;
+
             if (smallPlayer.activeSelf == false)
             {
                 normalPlayer.SetActive(false);
