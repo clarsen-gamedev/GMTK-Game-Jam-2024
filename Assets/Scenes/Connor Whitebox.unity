@@ -163,6 +163,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 827114524}
     m_Modifications:
+    - target: {fileID: 516978863258305825, guid: d3b00763749ba044fae86377f513822a, type: 3}
+      propertyPath: hit1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 516978863258305825, guid: d3b00763749ba044fae86377f513822a, type: 3}
+      propertyPath: hit2
+      value: 
+      objectReference: {fileID: 8300000, guid: 124487a1451d42d4f9de8f2c2bbeebfa, type: 3}
+    - target: {fileID: 516978863258305825, guid: d3b00763749ba044fae86377f513822a, type: 3}
+      propertyPath: hit3
+      value: 
+      objectReference: {fileID: 8300000, guid: 00803a688adb2ec41bc7ad6b5d2a12ad, type: 3}
+    - target: {fileID: 516978863258305825, guid: d3b00763749ba044fae86377f513822a, type: 3}
+      propertyPath: hit4
+      value: 
+      objectReference: {fileID: 8300000, guid: 55f64e467b33beb4f9690e8fb9531a19, type: 3}
+    - target: {fileID: 516978863258305825, guid: d3b00763749ba044fae86377f513822a, type: 3}
+      propertyPath: hit5
+      value: 
+      objectReference: {fileID: 8300000, guid: 124487a1451d42d4f9de8f2c2bbeebfa, type: 3}
     - target: {fileID: 5868808542996202999, guid: d3b00763749ba044fae86377f513822a, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1564,15 +1584,15 @@ Transform:
   - {fileID: 946696545}
   - {fileID: 1161547357}
   - {fileID: 82265098}
-  - {fileID: 939708635}
-  - {fileID: 376783351}
   - {fileID: 7412256562088430160}
   - {fileID: 398797184}
-  - {fileID: 1269832741}
   - {fileID: 686311438}
   - {fileID: 895765586}
   - {fileID: 456794508}
   - {fileID: 953794058}
+  - {fileID: 939708635}
+  - {fileID: 376783351}
+  - {fileID: 1269832741}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2486,6 +2506,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4420637671325973328, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
+      propertyPath: hit1
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a6bee9f2ce856f4ea1f90481bca2513, type: 3}
+    - target: {fileID: 4420637671325973328, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
+      propertyPath: hit2
+      value: 
+      objectReference: {fileID: 8300000, guid: bf2d141398bac694d9548d23a091b4f9, type: 3}
+    - target: {fileID: 4420637671325973328, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
+      propertyPath: hit3
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b0975cd25fbd9748957a8f432788f3f, type: 3}
+    - target: {fileID: 4420637671325973328, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
+      propertyPath: hit4
+      value: 
+      objectReference: {fileID: 8300000, guid: bf2d141398bac694d9548d23a091b4f9, type: 3}
+    - target: {fileID: 4420637671325973328, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
+      propertyPath: hit5
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a6bee9f2ce856f4ea1f90481bca2513, type: 3}
     - target: {fileID: 5087280074160089077, guid: 89bb8ecab91f46c44adc466caefc4b1a, type: 3}
       propertyPath: m_Name
       value: Dolly

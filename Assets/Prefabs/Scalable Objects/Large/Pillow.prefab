@@ -79,11 +79,11 @@ MonoBehaviour:
   maxScaleSize: 3
   minScaleSize: 0.25
   audioSource: {fileID: -851689972096755598}
-  hit1: {fileID: 0}
-  hit2: {fileID: 0}
-  hit3: {fileID: 0}
-  hit4: {fileID: 0}
-  hit5: {fileID: 0}
+  hit1: {fileID: 8300000, guid: 5fe0322169c074a4f861b3f898c1e2e6, type: 3}
+  hit2: {fileID: 8300000, guid: 0a1a72a415981d148a14c61ea912bd5e, type: 3}
+  hit3: {fileID: 8300000, guid: 0fd6cbc77453862449c3361a38f349d2, type: 3}
+  hit4: {fileID: 8300000, guid: 5fe0322169c074a4f861b3f898c1e2e6, type: 3}
+  hit5: {fileID: 8300000, guid: 0fd6cbc77453862449c3361a38f349d2, type: 3}
 --- !u!114 &5695476069409118817
 MonoBehaviour:
   m_ObjectHideFlags: 0
